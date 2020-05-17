@@ -1,3 +1,5 @@
 # bittorrent-cli
-A BitTorrent Client CLI tool
-hello ppps
+
+## A BitTorrent Client CLI tool written in C
+
+Write up coming soon!
