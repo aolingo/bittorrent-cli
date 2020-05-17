@@ -45,8 +45,12 @@ int main(int argc, char **argv) {
 
   // type 3 dict
   be_dict *tempDict = node->val.d;
-  printf("dict key %s \n", tempDict->key);
+  printf("announce key %s \n", tempDict->key);
   printf("tracker url %s\n", (tempDict->val)->val.s);
+
+  be_dict temp1 = node->val.d[1];
+  printf("temp1 key %s \n", temp1.key);
+  printf("temp1 val %s\n", (temp1.val)->val.s);
 
   return 0;
 }
