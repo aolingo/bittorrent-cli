@@ -6,7 +6,7 @@ CC=gcc
 CPPFLAGS=
 CFLAGS=-g
 
-MAINOBJS=bittorrentcli.o 
+MAINOBJS=main.o 
 
 main: $(MAINOBJS)
 	$(CC) -o main $(MAINOBJS)  $(CLIBS)
