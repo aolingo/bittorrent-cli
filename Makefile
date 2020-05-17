@@ -1,4 +1,4 @@
-all: main
+all: bitclient
 
 
 CLIBS=-pthread
@@ -6,14 +6,13 @@ CC=gcc
 CPPFLAGS=
 CFLAGS=-g
 
-MAINOBJS=main.o 
+MAINOBJS=bitclient.o 
 
-main: $(MAINOBJS)
-	$(CC) -o main $(MAINOBJS)  $(CLIBS)
-
+bitclient: $(MAINOBJS)
+	$(CC) -o bitclient $(MAINOBJS)  $(CLIBS)
 
 
 clean:
 	rm -f *.o
-	rm -f main
+	rm -f bitclient
 
