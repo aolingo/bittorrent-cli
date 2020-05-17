@@ -52,5 +52,20 @@ int main(int argc, char **argv) {
   printf("temp1 key %s \n", temp1.key);
   printf("temp1 val %s\n", (temp1.val)->val.s);
 
+  temp1 = node->val.d[2];
+  printf("temp1 key %s \n", temp1.key);
+  printf("temp1 val %s\n", (temp1.val)->val.s);
+
+  temp1 = node->val.d[3];
+  printf("temp1 key %s \n", temp1.key);
+  printf("temp1 val %s\n", (temp1.val)->val.s);
+
+  temp1 = node->val.d[4];
+  printf("temp1 key %s \n", temp1.key);
+  printf("temp1 val %s\n", (temp1.val)->val.s);
+
+  temp1 = node->val.d[5];
+  printf("temp1 key %s \n", temp1.key);
+  printf("temp1 val %s\n", (temp1.val)->val.s);
   return 0;
 }
