@@ -42,9 +42,11 @@ int main(int argc, char **argv) {
 
   be_node *node;
   node = load_be_node(torrentName);
+
   // type 3 dict
   be_dict *tempDict = node->val.d;
   printf("dict key %s \n", tempDict->key);
+  printf("tracker url %s\n", (tempDict->val)->val.s);
 
   return 0;
 }
