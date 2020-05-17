@@ -1,18 +1,34 @@
-all: bitclient
-
-
+# all: bitclient bencode
 CLIBS=-pthread
 CC=gcc
-CPPFLAGS=
-CFLAGS=-g
+CFLAGS=-g -Wall
 
-MAINOBJS=bitclient.o 
 
-bitclient: $(MAINOBJS)
-	$(CC) -o bitclient $(MAINOBJS)  $(CLIBS)
+SRC= bencode.c  bitclient.c
+OBJ=$(SRC:.c=.o)
+BIN=bitclient
 
+all: $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(CFLAGS) -o $(BIN) $(OBJ) 
+
+
+%.o:%.c
+	$(CC) -c $(CFLAGS) -o $@ $<  
+
+$(SRC):
 
 clean:
-	rm -f *.o
-	rm -f bitclient
+	rm -rf $(OBJ) $(BIN)
+
+# MAINOBJS=bitclient.o 
+
+# bitclient: $(MAINOBJS)
+# 	$(CC) -o bitclient $(MAINOBJS)  $(CLIBS)
+
+
+# clean:
+# 	rm -f *.o
+# 	rm -f bitclient
 
