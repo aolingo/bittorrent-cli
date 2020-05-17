@@ -1,4 +1,4 @@
-all: node
+all: main
 
 
 CLIBS=-pthread
@@ -6,14 +6,14 @@ CC=gcc
 CPPFLAGS=
 CFLAGS=-g
 
-NODEOBJS=node.o 
+MAINOBJS=bittorrentcli.o 
 
-node: $(NODEOBJS)
-	$(CC) -o node $(NODEOBJS)  $(CLIBS)
+main: $(MAINOBJS)
+	$(CC) -o main $(MAINOBJS)  $(CLIBS)
 
 
 
 clean:
 	rm -f *.o
-	rm -f node
+	rm -f main
 
