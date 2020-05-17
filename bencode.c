@@ -24,13 +24,13 @@
  * into the public domain as well).
  */
 
+#include "bencode.h"
+
 #include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h> /* malloc() realloc() free() strtoll() */
 #include <string.h> /* memset() */
 #include <sys/stat.h>
-
-#include "bencode.h"
 
 // allocates memory of the right size
 be_node *be_alloc(be_type type) {
@@ -180,9 +180,10 @@ be_node *be_decoden(const char *data, long long len) {
 
 be_node *be_decode(const char *data) { return be_decoden(data, strlen(data)); }
 
-inline void _be_free_str(char *str) {
+void _be_free_str(char *str) {
   if (str) free(str - sizeof(long long));
 }
+
 void be_free(be_node *node) {
   switch (node->type) {
     case BE_STR:

@@ -50,14 +50,15 @@ typedef struct be_node {
     long long i;         // a long long integer
     struct be_node **l;  // a pointer to an array of be_nodes representing a
                          // list
-    struct be_dict *d;  // a dictionary
-  } val;                // this union is stored in val
+    struct be_dict *d;   // a dictionary
+  } val;                 // this union is stored in val
 } be_node;
 
 long long be_str_len(be_node *node);
 
 be_node *be_decode(const char *bencode);
 be_node *be_decoden(const char *bencode, long long bencode_len);
+void _be_free_str(char *str);
 void be_free(be_node *node);
 
 // dump out the be_node encoding starting from the top
