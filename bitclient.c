@@ -19,7 +19,6 @@
 // TODO, argument validations
 int isArgValid(char *torrentPath, char *outPath) {
   // https://docs.microsoft.com/en-us/windows/win32/fileio/naming-a-file
-  printf("Input torrentName: %s outPath: %s\n", torrentPath, outPath);
   // https://www.tutorialspoint.com/c_standard_library/c_function_strstr.htm
   return 1;
 }
@@ -35,7 +34,7 @@ int main(int argc, char **argv) {
   char *torrentName = argv[1];
   char *outPath = argv[2];
 
-  printf("Input torrentName: %s outPath: %s\n", torrentName, outPath);
+  printf("Torrent filepath: %s outPath: %s\n", torrentName, outPath);
 
   if (!isArgValid(torrentName, outPath)) {
     return -1;
@@ -43,6 +42,9 @@ int main(int argc, char **argv) {
 
   be_node *node;
   node = load_be_node(torrentName);
-  printf("node has type %d and has string %s\n", node->type, node->val.s);
+  // type 3 dict
+  be_dict *tempDict = node->val.d;
+  printf("dict key %s \n", tempDict->key);
+
   return 0;
 }
